@@ -4,6 +4,8 @@ const ParkTitle = styled.div`
   color: #000;
   font-size: 25px;
   font-weight: bold;
+  margin-top: 70px;
+  margin-bottom: 25px;
 `;
 const ParkImage = styled.div``;
 const ParkMap = styled.div`
@@ -19,6 +21,7 @@ const ParkAddr = styled.div`
 `;
 const ParkDesc = styled.div`
   font-size: 20px;
+  margin-bottom: 70px;
 `;
 
 export const style = {

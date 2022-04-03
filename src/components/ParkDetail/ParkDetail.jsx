@@ -1,11 +1,18 @@
 import React from "react";
 import { style } from "../../styles/ParkDetail.styles";
 import { Image } from "antd";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 export default function ParkDetail() {
   return (
     <div className="container">
-      <ParkTitle>서울대공원</ParkTitle>
-      <div className="flex">
+      <ParkTitle>
+        서울대공원
+        <i>
+          <FontAwesomeIcon icon={faHeart} />
+        </i>
+      </ParkTitle>
+      <div className="flex mb-30">
         <ParkImage>
           <Image
             width={349}
@@ -16,7 +23,7 @@ export default function ParkDetail() {
         </ParkImage>
         <ParkMap>지도영역</ParkMap>
       </div>
-      <div className="flex space-between">
+      <div className="flex space-between mb-20">
         <ParkLink>홈페이지 : 서울대공원</ParkLink>
         <ParkAddr>서울특별시 성동구 뚝섬로 273</ParkAddr>
       </div>

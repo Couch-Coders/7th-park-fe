@@ -6,15 +6,15 @@ const onSearch = (value) => console.log(value);
 
 export default function SearchForm() {
   return (
-    <SearchContainer>
+    <SearchFormContainer>
       <SearchTitle>공원 어디로 갈까?</SearchTitle>
       <Search
         placeholder="공원 이름을 검색해 주세요."
         onSearch={onSearch}
         enterButton
       />
-    </SearchContainer>
+    </SearchFormContainer>
   );
 }
 
-const { SearchContainer, SearchTitle } = style;
+const { SearchFormContainer, SearchTitle } = style;

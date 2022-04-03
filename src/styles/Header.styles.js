@@ -5,11 +5,13 @@ const Nav = styled.nav`
   align-items: center;
   justify-content: space-between;
   padding: 32px 40px;
+  .link {
+    color: #595959;
+  }
 `;
 
 const Logo = styled.h1`
   font-size: 14px;
-  color: #595959;
 `;
 
 const User = styled.div`
@@ -20,6 +22,14 @@ const User = styled.div`
 const UserLogin = styled.span`
   display: inline-block;
   margin-left: 10px;
+  i {
+    margin-right: 10px;
+  }
+  .btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
 `;
 
 export const style = {

@@ -7,19 +7,36 @@ import { AuthContext } from "../contexts/AuthProviders";
 import { signInWithGoogle, signOutWithGoogle } from "../service/firebase";
 export default function Header() {
   const { currentUser } = useContext(AuthContext);
-
+  console.log(currentUser);
   return (
     <Nav>
       <Logo>
-        <Link to="/">Home</Link>
+        <Link className="link" to="/">
+          Home
+        </Link>
       </Logo>
       <User>
-        <Avatar size="small" icon={<UserOutlined />} />
         <UserLogin>
           {currentUser ? (
-            <button onClick={signOutWithGoogle}>로그아웃</button>
+            <>
+              <i>
+                <Avatar size="small" src={currentUser.photoURL} />
+              </i>
+              <span>{`${currentUser.displayName} 님`}</span>
+              <button className="btn" onClick={signOutWithGoogle}>
+                로그아웃
+              </button>
+              <Link className="link" to="/mypage">
+                마이페이지
+              </Link>
+            </>
           ) : (
-            <button onClick={signInWithGoogle}>로그인</button>
+            <>
+              <Avatar size="small" icon={<UserOutlined />} />
+              <button className="btn" onClick={signInWithGoogle}>
+                로그인
+              </button>
+            </>
           )}
         </UserLogin>
       </User>

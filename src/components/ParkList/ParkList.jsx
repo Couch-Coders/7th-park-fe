@@ -22,6 +22,24 @@ export default function ParkList() {
     {
       title: "Title 6",
     },
+    {
+      title: "Title 6",
+    },
+    {
+      title: "Title 6",
+    },
+    {
+      title: "Title 6",
+    },
+    {
+      title: "Title 6",
+    },
+    {
+      title: "Title 6",
+    },
+    {
+      title: "Title 6",
+    },
   ];
 
   return (

@@ -1,6 +1,5 @@
 .flex {
   display: flex;
-  align-items: center;
 }
 .space-between {
   justify-content: space-between;
@@ -12,4 +11,22 @@
 .container {
   margin: 0 auto;
   width: 855px;
+  height: 100%;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+.mb-30 {
+  margin-bottom: 30px;
+}
+.mr-10 {
+  margin-right: 10px;
+}
+.mr-20 {
+  margin-right: 20px;
+}
+
+.bold {
+  font-weight: bold;
 }
