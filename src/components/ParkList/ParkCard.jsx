@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "antd";
-import { style } from "../styles/ParkCard.styles";
+import { style } from "../../styles/ParkCard.styles";
 import { Rate } from "antd";
 
 const { Meta } = Card;

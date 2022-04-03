@@ -1,0 +1,20 @@
+.slick-slider {
+  position: relative;
+  display: block;
+  /* margin: 30px auto 50px; */
+}
+
+.slick-slide h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: bisque;
+  margin: 10px;
+  padding: 2%;
+  height: 200px;
+}
+
+.slick-prev,
+.slick-next {
+  background-color: black;
+}

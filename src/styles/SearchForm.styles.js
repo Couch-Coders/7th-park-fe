@@ -6,6 +6,7 @@ const SearchContainer = styled.div`
 `;
 
 const SearchTitle = styled.div`
+  text-align: center;
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 40px;

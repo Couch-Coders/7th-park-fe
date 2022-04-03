@@ -1,7 +1,7 @@
 import React from "react";
-import BestParkSlide from "../components/BestParkSlide";
-import ParkList from "../components/ParkList";
-import SearchForm from "../components/SearchForm";
+import BestParkSlide from "../components/BestParkSlide/BestParkSlide";
+import ParkList from "../components/ParkList/ParkList";
+import SearchForm from "../components/Search/SearchForm";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 

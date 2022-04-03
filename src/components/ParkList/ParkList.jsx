@@ -1,6 +1,6 @@
 import React from "react";
 import { List } from "antd";
-import { style } from "../styles/ParkList.styles";
+import { style } from "../../styles/ParkList.styles";
 import ParkCard from "./ParkCard";
 export default function ParkList() {
   const data = [

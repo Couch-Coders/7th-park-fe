@@ -1,0 +1,15 @@
+.flex {
+  display: flex;
+  align-items: center;
+}
+.space-between {
+  justify-content: space-between;
+}
+.align-items-center {
+  align-items: center;
+}
+
+.container {
+  margin: 0 auto;
+  width: 855px;
+}

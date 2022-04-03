@@ -1,21 +1,25 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./App.css";
-import "antd/dist/antd.css";
+import React, { useState, useEffect } from "react";
+import { HashRouter, Routes, Route } from "react-router-dom";
+
+import "antd/dist/antd.min.css";
 import DetailPage from "./pages/DetailPage";
 import MainPage from "./pages/MainPage";
-import MyPage from "./pages/MyPage/MyPage";
+import MyPage from "./pages/MyPage";
 import "./styles/antdCustomStyle.css";
+import AuthProviders from "./contexts/AuthProviders";
+import "../src/styles/globalStyle.css";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="detail" element={<DetailPage />} />
-          <Route path="mypage" element={<MyPage />} />
-        </Routes>
-      </BrowserRouter>
+      <AuthProviders>
+        <HashRouter>
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/mypage" element={<MyPage />} />
+            <Route path="/detail" element={<DetailPage />} />
+          </Routes>
+        </HashRouter>
+      </AuthProviders>
     </div>
   );
 }
