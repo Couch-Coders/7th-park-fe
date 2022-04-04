@@ -1,0 +1,64 @@
+/* 메인 카드 리스트 */
+
+.ant-card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.ant-card-bordered {
+  border-radius: 10px;
+}
+
+.ant-card-cover img {
+  border-radius: 10px 10px 0 0;
+}
+
+/* 메인 검색 */
+.ant-input-group-wrapper {
+  display: block;
+  width: 552px;
+  margin: 0 auto;
+}
+
+/* 메인 필터 태그 */
+
+.ant-tag {
+  border: 1px solid #000;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+/* 마이페이지 탭 */
+
+.ant-tabs {
+}
+
+.ant-tabs > .ant-tabs-nav {
+  padding: 20px 0;
+}
+
+.ant-tabs-tab {
+  padding: 20px;
+  color: #000;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+
+.ant-tabs-tab:hover {
+  color: #000;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active {
+  background-color: #1890ff;
+  border: 1px solid #1890ff;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #fff;
+}
+
+.ant-tabs-ink-bar {
+  display: none;
+}

@@ -1,0 +1,48 @@
+<PAGE>
+  // 1.
+  <nav>
+    <GoToHomeButton />
+    <AccountInfo>
+      <MyProfile />
+      <LOGIN /> or
+      <LOGOUT /> // 로그인 여부에 따라서 버튼 모양 변경
+    </AccountInfo>
+  </nav>
+  <Main>
+    <Search>
+      <SearchTitle>공원, 어디로갈까?</SearchTitle>
+      <SearchForm>
+        <SearchInput /> // 검색창
+        <SearchBtn /> // 검색버튼
+      </SearchForm>
+      <SearchFilter>
+        <FilterArea>// 지역 필터
+          <Area /> // 지역이름
+          <AreaMore /> // 지역 더보기
+        </FilterArea> // 지역별 필터
+        <FilterSort> // 정렬
+          <SortStar /> // 별점순
+          <SortDistance /> // 거리순
+        </FilterSort>
+      </SearchFilter>
+    </Search>
+    <BestSlide>
+      <BestText /> // Best 폰트
+      <Carousel>
+        <MoveImageToLeft /> // 이전 사진 (좌로 이동) + 1번 째 항목에서 이동 -> 맨 뒷 항목으로 이동
+        <parks /> // 공원 목록
+        <MoveImageToRight /> // 다음 사진 (우로 이동) + 마지막에서 이동 -> 첫 항목으로
+      </Carousel>
+    </BestSlide>
+    <ParkList>
+      <ParkBlock> //공원 단위(map)
+        <ParkImage /> //공원 이미지
+        <ParkLike /> // 공원 좋아요
+        <ParkETC>
+          <ParkTitle /> // 공원 이름
+          <ParkRate /> // 공원 평점
+        </ParkETC>
+      </ParkBlock>
+    </ParkList>
+  </Main>
+</PAGE>
