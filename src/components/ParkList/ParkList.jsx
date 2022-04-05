@@ -1,66 +1,88 @@
-import React from "react";
-import { List } from "antd";
+import React, { useState, useEffect } from "react";
 import { style } from "../../styles/ParkList.styles";
-import ParkCard from "./ParkCard";
+import { List, Card, Rate } from "antd";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { Link } from "react-router-dom";
 export default function ParkList() {
-  const data = [
-    {
-      title: "Title 1",
-    },
-    {
-      title: "Title 2",
-    },
-    {
-      title: "Title 3",
-    },
-    {
-      title: "Title 4",
-    },
-    {
-      title: "Title 5",
-    },
-    {
-      title: "Title 6",
-    },
-    {
-      title: "Title 6",
-    },
-    {
-      title: "Title 6",
-    },
-    {
-      title: "Title 6",
-    },
-    {
-      title: "Title 6",
-    },
-    {
-      title: "Title 6",
-    },
-    {
-      title: "Title 6",
-    },
-  ];
+  const { Meta } = Card;
 
+  const [parksData, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await fetch(`http://localhost:3001/detail`);
+        if (!response.ok) {
+          throw new Error(
+            `This is an HTTP error: The status is ${response.status}`
+          );
+        }
+        let data = await response.json();
+        setData(data);
+        console.log(data);
+        setError(null);
+      } catch (err) {
+        setError(err.message);
+        setData(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData();
+  }, []);
+  console.log(parksData);
   return (
     <CardListContainer>
-      <List
-        grid={{
-          gutter: 16,
-          xs: 1,
-          sm: 2,
-          md: 3,
-          lg: 3,
-          xl: 3,
-          xxl: 3,
-        }}
-        dataSource={data}
-        renderItem={(item) => (
-          <List.Item>
-            <ParkCard title={item.title} />
-          </List.Item>
+      {loading && <div>잠시만 기다려 주세요...</div>}
+      {error && (
+        <div>{`공원 데이터를 가져오는데 문제가 있습니다. - ${error}`}</div>
+      )}
+      {/* <ul>
+        {data &&
+          data.map(({ p_idx, p_park }) => (
+            <li key={p_idx}>
+              <h3>{p_park}</h3>
+            </li>
+          ))}
+      </ul> */}
+      <>
+        {parksData && (
+          <List
+            grid={{
+              gutter: 16,
+              xs: 1,
+              sm: 2,
+              md: 3,
+              lg: 3,
+              xl: 3,
+              xxl: 3,
+            }}
+            dataSource={parksData}
+            renderItem={(item) => (
+              <Link key={item.id} to={`/detail/${item.id}`}>
+                <List.Item>
+                  <Card
+                    hoverable
+                    style={{ width: 278, height: 173, padding: 0 }}
+                    cover={
+                      <img
+                        alt={item.p_park}
+                        src={item.p_img}
+                        style={{ height: 131 }}
+                      />
+                    }
+                  >
+                    <Meta title={item.p_park} />
+                    <Rate allowHalf defaultValue={2.5} />
+                  </Card>
+                </List.Item>
+              </Link>
+            )}
+          />
         )}
-      />
+      </>
     </CardListContainer>
   );
 }
