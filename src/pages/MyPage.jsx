@@ -1,17 +1,18 @@
-import React, { useContext } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import { Tabs, Avatar } from "antd";
-import { UserOutlined } from "@ant-design/icons";
-import ParkList from "../components/ParkList/ParkList";
-import ReviewItem from "../components/Review/ReviewItem";
-import { AuthContext } from "../contexts/AuthProviders";
-import { style } from "../styles/Mypage.styles";
+import React, { useContext } from 'react';
+import { Tabs, Avatar } from 'antd';
+import { UserOutlined } from '@ant-design/icons';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import ParkList from '../components/ParkList/ParkList';
+import ReviewItem from '../components/Review/ReviewItem';
+import { AuthContext } from '../contexts/AuthProviders';
+import { style } from '../styles/Mypage.styles';
+
 export default function MyPage() {
   const { TabPane } = Tabs;
-  function callback(key) {
+  const callback = function callback(key) {
     console.log(key);
-  }
+  };
   const { currentUser } = useContext(AuthContext);
 
   return (
@@ -33,7 +34,7 @@ export default function MyPage() {
             </>
           )}
         </div>
-        <Tabs defaultActiveKey="1" onChange={callback}>
+        <Tabs defaultActiveKey="1" onChange={callback()}>
           <TabPane tab="내가 좋아하는 공원" key="1">
             <TabTitle>내가 좋아하는 공원</TabTitle>
             <div>

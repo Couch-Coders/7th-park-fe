@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { initializeApp } from 'firebase/app';
+import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -29,19 +29,19 @@ export const auth = getAuth(app);
 export const signInWithGoogle = () => {
   const provider = new GoogleAuthProvider();
   signInWithPopup(auth, provider)
-    .then((result) => {
+    .then(result => {
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
-      const user = result.user;
+      const { user } = result;
     })
-    .catch((error) => {
+    .catch(error => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      const email = error.email;
+      const { email } = error;
       const credential = GoogleAuthProvider.credentialFromError(error);
     });
 };
 export const signOutWithGoogle = () => {
-  localStorage.removeItem("user");
+  localStorage.removeItem('user');
   auth.signOut();
 };

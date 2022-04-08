@@ -1,8 +1,9 @@
-import React from "react";
-import { Input } from "antd";
-import { style } from "../../styles/SearchForm.styles";
+import React from 'react';
+import { Input } from 'antd';
+import { style } from '../../styles/SearchForm.styles';
+
 const { Search } = Input;
-const onSearch = (value) => console.log(value);
+const onSearch = value => console.log(value);
 
 export default function SearchForm() {
   return (

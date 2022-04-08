@@ -1,33 +1,35 @@
-import React, { useState, useEffect } from "react";
-import { style } from "../../styles/ParkDetail.styles";
-import { Image } from "antd";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { useParams } from "react-router-dom";
-import GoogleMap from "./GoogleMap";
+import React, { useState, useEffect } from 'react';
+
+import { Image } from 'antd';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { useParams } from 'react-router-dom';
+import { style } from '../../styles/ParkDetail.styles';
+import GoogleMap from './GoogleMap';
+
 export default function ParkDetail() {
-  let { id } = useParams();
-  console.log(id);
+  const { id } = useParams();
   const [parkItemData, setparkItemData] = useState([]);
-  useEffect(() => {
-    fetchParkItem();
-  }, []);
+
   const fetchParkItem = async () => {
     try {
       const response = await fetch(`http://localhost:3001/detail/${id}`);
       if (!response.ok) {
         throw new Error(
-          `This is an HTTP error: The status is ${response.status}`
+          `This is an HTTP error: The status is ${response.status}`,
         );
       }
-      let res = await response.json();
+      const res = await response.json();
       console.log(res);
       setparkItemData(res);
     } catch (err) {
       console.log(err);
     }
   };
-  console.log(parkItemData);
+
+  useEffect(() => {
+    fetchParkItem();
+  }, []);
 
   return (
     <div className="container">

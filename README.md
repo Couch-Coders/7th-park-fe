@@ -44,6 +44,10 @@
   - npm install antd
 - GoogleMap
   - yarn add @react-google-maps/api
+- ESLint
+  - yarn add -D eslint
+- Prettier
+  - yarn add -D prettier
 
 # 사용한 API
 

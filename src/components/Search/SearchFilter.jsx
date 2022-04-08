@@ -1,6 +1,7 @@
-import React from "react";
-import { Tag } from "antd";
-import { style } from "../../styles/SearchFilter.styles";
+import React from 'react';
+import { Tag } from 'antd';
+import { style } from '../../styles/SearchFilter.styles';
+
 export default function SearchFilter() {
   function log(e) {
     console.log(e);
@@ -15,8 +16,8 @@ export default function SearchFilter() {
           <SearchResultText>‘성동구’로 검색한 결과입니다.</SearchResultText>
         </SearchTag>
         <SearchFilterBtn>
-          <button>별점순</button>
-          <button>거리순</button>
+          <button type="button">별점순</button>
+          <button type="button">거리순</button>
         </SearchFilterBtn>
       </SearchFilterContainer>
     </div>
