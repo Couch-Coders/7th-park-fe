@@ -9,10 +9,10 @@ const ParkTitle = styled.div`
 `;
 const ParkImage = styled.div``;
 const ParkMap = styled.div`
-  background-color: #eee;
-  width: 100%;
-  margin-left: 27px;
+width: 100%;
+margin-left: 30px;
 `;
+// background-color: #eee;
 const ParkLink = styled.div`
   font-size: 20px;
 `;
