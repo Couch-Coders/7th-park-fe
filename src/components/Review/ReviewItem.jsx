@@ -1,8 +1,10 @@
-import React from "react";
-import { Button, Rate } from "antd";
-import { style } from "../../styles/ReviewItem.styles";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
+import React from 'react';
+import { Button, Rate } from 'antd';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import { style } from '../../styles/ReviewItem.styles';
+
 export default function ReviewItem() {
   return (
     <ReviewItemContainer>

@@ -1,11 +1,12 @@
-import React from "react";
-import { Pagination, Rate, Input } from "antd";
-import { style } from "../../styles/Review.styles";
-import ReviewItem from "./ReviewItem";
+import React from 'react';
+import { Pagination, Rate, Input } from 'antd';
+import { style } from '../../styles/Review.styles';
+import ReviewItem from './ReviewItem';
+
 export default function Review() {
   const { Search } = Input;
 
-  const onSearch = (value) => console.log(value);
+  const onSearch = value => console.log(value);
   return (
     <div className="container">
       <ReviewListContainer>

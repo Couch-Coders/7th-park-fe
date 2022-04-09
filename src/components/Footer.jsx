@@ -1,5 +1,6 @@
-import React from "react";
-import { style } from "../styles/Footer.styles";
+import React from 'react';
+import { style } from '../styles/Footer.styles';
+
 export default function Footer() {
   return (
     <FooterContainer>

@@ -1,10 +1,12 @@
-import React, { useState, useContext, useEffect } from "react";
-import { Avatar } from "antd";
-import { Link } from "react-router-dom";
-import { UserOutlined } from "@ant-design/icons";
-import { style } from "../styles/Header.styles";
-import { AuthContext } from "../contexts/AuthProviders";
-import { signInWithGoogle, signOutWithGoogle } from "../service/firebase";
+import React, { useState, useContext, useEffect } from 'react';
+import { Avatar } from 'antd';
+import { Link } from 'react-router-dom';
+
+import { UserOutlined } from '@ant-design/icons';
+import { style } from '../styles/Header.styles';
+import { AuthContext } from '../contexts/AuthProviders';
+import { signInWithGoogle, signOutWithGoogle } from '../service/firebase';
+
 export default function Header() {
   const { currentUser } = useContext(AuthContext);
   console.log(currentUser);
@@ -23,7 +25,7 @@ export default function Header() {
                 <Avatar size="small" src={currentUser.photoURL} />
               </i>
               <span>{`${currentUser.displayName} 님`}</span>
-              <button className="btn" onClick={signOutWithGoogle}>
+              <button type="button" className="btn" onClick={signOutWithGoogle}>
                 로그아웃
               </button>
               <Link className="link" to="/mypage">
@@ -33,7 +35,7 @@ export default function Header() {
           ) : (
             <>
               <Avatar size="small" icon={<UserOutlined />} />
-              <button className="btn" onClick={signInWithGoogle}>
+              <button type="button" className="btn" onClick={signInWithGoogle}>
                 로그인
               </button>
             </>

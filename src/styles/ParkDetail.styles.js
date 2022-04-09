@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const ParkTitle = styled.div`
   color: #000;
@@ -9,8 +9,8 @@ const ParkTitle = styled.div`
 `;
 const ParkImage = styled.div``;
 const ParkMap = styled.div`
-width: 100%;
-margin-left: 30px;
+  width: 100%;
+  margin-left: 30px;
 `;
 // background-color: #eee;
 const ParkLink = styled.div`
