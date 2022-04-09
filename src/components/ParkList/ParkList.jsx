@@ -3,7 +3,7 @@ import { List, Card, Rate } from 'antd';
 import { Link } from 'react-router-dom';
 import { style } from '../../styles/ParkList.styles';
 
-export default function ParkList() {
+export default function ParkList({ query }) {
   const { Meta } = Card;
 
   const [parksData, setData] = useState(null);
@@ -32,22 +32,13 @@ export default function ParkList() {
     };
     getData();
   }, []);
-  console.log(parksData);
+
   return (
     <CardListContainer>
       {loading && <div>잠시만 기다려 주세요...</div>}
       {error && (
         <div>{`공원 데이터를 가져오는데 문제가 있습니다. - ${error}`}</div>
       )}
-      {/* <ul>
-        {data &&
-          data.map(({ p_idx, p_park }) => (
-            <li key={p_idx}>
-              <h3>{p_park}</h3>
-            </li>
-          ))}
-      </ul> */}
-
       {parksData && (
         <List
           grid={{
