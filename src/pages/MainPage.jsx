@@ -25,8 +25,8 @@ export default function MainPage() {
     async function fetchData() {
       setLoading(true);
       setNotices([]);
+      // `http://localhost:3001/parks?${debouncedSearch}`,
       const data = await fetch(
-        // `http://localhost:3001/parks?${debouncedSearch}`,
         `https://ws-public.interpol.int/notices/v1/red?forename=${debouncedSearch}&resultPerPage=200`,
       ).then(res => res.json());
       setNotices(data._embedded.notices);
