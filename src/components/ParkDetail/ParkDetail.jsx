@@ -49,7 +49,7 @@ export default function ParkDetail() {
           />
         </ParkImage>
         <ParkMap>
-          <GoogleMap />
+          <GoogleMap lat={parkItemData.latitude} lng={parkItemData.longitude} />
         </ParkMap>
       </div>
       <div className="flex space-between mb-20">
