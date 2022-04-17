@@ -20,9 +20,10 @@ export default function RegisterPage() {
   };
   console.log(userId, 'userId');
   console.log(userNickName, 'userNickName');
-  const onSubmit = async event => {
+  const onSubmit = event => {
+    console.log('클릭됨');
     event.preventDefault();
-    await fetch('/users/me', {
+    fetch('/users', {
       method: 'POST',
       body: JSON.stringify({
         gId: userId,
@@ -57,7 +58,7 @@ export default function RegisterPage() {
           onChange={onUserNickNameHandler}
         />
         <SignupBtn>
-          <Button type="primary" onSubmit={onSubmit}>
+          <Button type="primary" onClick={onSubmit}>
             회원가입
           </Button>
         </SignupBtn>
