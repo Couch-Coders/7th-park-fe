@@ -1,16 +1,25 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { Input, Button } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
+import { onAuthStateChanged } from 'firebase/auth';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { style } from '../styles/SignupPage.styles';
-import { AuthContext } from '../contexts/AuthProviders';
+
+import { auth } from '../service/firebase';
+
+export const defaultHeaders = {
+  'Content-Type': 'application/json',
+  Accept: 'application/json',
+};
 
 export default function RegisterPage() {
   const [userId, setUserId] = useState('');
   const [userNickName, setUserNickName] = useState('');
 
-  const { currentUser } = useContext(AuthContext);
+  // const { currentUser } = useContext(AuthContext);
+  const [currentUser, setCurrentUser] = useState(null);
+  console.log(currentUser, '로그인 한 뒤 회원가입');
 
   const onUserIdHandler = event => {
     setUserId(event.currentTarget.value);
@@ -20,20 +29,38 @@ export default function RegisterPage() {
   };
   console.log(userId, 'userId');
   console.log(userNickName, 'userNickName');
-  const onSubmit = event => {
+
+  const onSubmit = async event => {
     console.log('클릭됨');
     event.preventDefault();
-    fetch('/users', {
-      method: 'POST',
-      body: JSON.stringify({
-        gId: userId,
-        uNickname: userNickName,
-      }),
-    })
-      .then(response => response.json())
-      .then(response => {
-        alert('가입되셨습니다.');
-      });
+    onAuthStateChanged(auth, async user => {
+      if (user) {
+        //  setCurrentUser(user);
+        // 토큰을 가져온다.
+        const token = await user.getIdToken();
+        console.log(token, 'AuthProvider Token');
+        // Header에 인증 정보 추가
+        defaultHeaders.Authorization = `Bearer ${token}`;
+        setCurrentUser(user);
+        // defaultHeaders.ID = user.email;
+        // defaultHeaders.NickName = user.displayName;
+        // 로그인 시도 (백엔드 API 구현 필요)
+        const res = await fetch('/users', {
+          method: 'POST',
+          headers: defaultHeaders,
+          body: JSON.stringify({
+            gId: userId,
+            uNickname: userNickName,
+          }),
+        })
+          .then(response => response.json())
+          .then(response => {
+            alert('가입되셨습니다.');
+          });
+      } else {
+        setCurrentUser(null);
+      }
+    });
   };
 
   return (
