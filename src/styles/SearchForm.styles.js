@@ -15,7 +15,27 @@ const SearchTitle = styled.div`
   margin-bottom: 40px;
 `;
 
+const SearchTag = styled.div`
+  margin-top: 20px;
+`;
+
+const SearchResultText = styled.div`
+  margin-top: 20px;
+`;
+
+const SearchFilterBtn = styled.div`
+  button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+`;
+
 export const style = {
   SearchFormContainer,
   SearchTitle,
+  SearchTag,
+  SearchResultText,
+  SearchFilterBtn,
 };

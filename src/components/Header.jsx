@@ -9,7 +9,7 @@ import { signInWithGoogle, signOutWithGoogle } from '../service/firebase';
 
 export default function Header() {
   const { currentUser } = useContext(AuthContext);
-  console.log(currentUser);
+  console.log(currentUser, '헤더 커렌트유저');
   return (
     <Nav>
       <Logo>
