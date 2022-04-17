@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const SignupContainer = styled.div`
   width: 500px;
-  height: 100vh;
+  height: 80vh;
   margin: 0 auto;
   .signupInput {
     margin: 10px auto;

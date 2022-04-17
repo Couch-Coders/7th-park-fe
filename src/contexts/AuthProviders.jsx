@@ -21,13 +21,15 @@ export default function AuthProviders({ children }) {
         console.log(token, 'AuthProvider Token');
         // Header에 인증 정보 추가
         defaultHeaders.Authorization = `Bearer ${token}`;
+        // defaultHeaders.ID = user.email;
+        // defaultHeaders.NickName = user.displayName;
         // 로그인 시도 (백엔드 API 구현 필요)
         const res = await fetch('/users/me', {
           method: 'GET',
           headers: defaultHeaders,
         });
-        console.log(res, ' res');
-        console.log(user, 'user');
+        // console.log(res, ' res');
+        // console.log(user, 'user');
         // const loginUser = await res.json();
         // 로그인 성공시 user를 넘겨줌
         if (res.status === 200) {
