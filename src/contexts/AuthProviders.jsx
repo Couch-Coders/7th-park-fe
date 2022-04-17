@@ -11,13 +11,14 @@ export const defaultHeaders = {
 
 export default function AuthProviders({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
-
+  console.log(currentUser, 'AuthProviders');
   useEffect(() => {
     onAuthStateChanged(auth, async user => {
       if (user) {
+        //  setCurrentUser(user);
         // 토큰을 가져온다.
         const token = await user.getIdToken();
-        console.log(token);
+        console.log(token, 'AuthProvider Token');
         // Header에 인증 정보 추가
         defaultHeaders.Authorization = `Bearer ${token}`;
         // 로그인 시도 (백엔드 API 구현 필요)
@@ -26,11 +27,14 @@ export default function AuthProviders({ children }) {
           headers: defaultHeaders,
         });
         console.log(res, ' res');
-
+        console.log(user, 'user');
+        // const loginUser = await res.json();
         // 로그인 성공시 user를 넘겨줌
         if (res.status === 200) {
           const loginUser = await res.json();
           setCurrentUser(loginUser);
+
+          console.log(loginUser, '로그인유저');
         }
       } else {
         setCurrentUser(null);

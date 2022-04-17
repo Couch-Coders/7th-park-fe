@@ -32,7 +32,9 @@ export const signInWithGoogle = () => {
     .then(result => {
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
+      console.log(token, 'firebase token');
       const { user } = result;
+      console.log(user, 'firebase user');
     })
     .catch(error => {
       const errorCode = error.code;
