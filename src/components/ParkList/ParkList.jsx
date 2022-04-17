@@ -13,7 +13,7 @@ export default function ParkList() {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await fetch(`http://localhost:3001/detail`);
+        const response = await fetch(`http://localhost:3001/parks`);
         if (!response.ok) {
           throw new Error(
             `This is an HTTP error: The status is ${response.status}`,
@@ -39,14 +39,6 @@ export default function ParkList() {
       {error && (
         <div>{`공원 데이터를 가져오는데 문제가 있습니다. - ${error}`}</div>
       )}
-      {/* <ul>
-        {data &&
-          data.map(({ p_idx, p_park }) => (
-            <li key={p_idx}>
-              <h3>{p_park}</h3>
-            </li>
-          ))}
-      </ul> */}
 
       {parksData && (
         <List
@@ -61,21 +53,21 @@ export default function ParkList() {
           }}
           dataSource={parksData}
           renderItem={item => (
-            <Link key={item.id} to={`/detail/${item.id}`}>
+            <Link key={item.pidx} to={`/detail/${item.pidx}`}>
               <List.Item>
                 <Card
                   hoverable
                   style={{ width: 278, height: 173, padding: 0 }}
                   cover={
                     <img
-                      alt={item.p_park}
-                      src={item.p_img}
+                      alt={item.pname}
+                      src={item.pimg}
                       style={{ height: 131 }}
                     />
                   }
                 >
-                  <Meta title={item.p_park} />
-                  <Rate allowHalf defaultValue={2.5} />
+                  <Meta title={item.pname} />
+                  <Rate allowHalf defaultValue={item.pavgRate} />
                 </Card>
               </List.Item>
             </Link>
