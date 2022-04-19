@@ -35,6 +35,8 @@ export default function BestParkSlide() {
     getData();
   }, []);
 
+  console.log(parksData);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -52,24 +54,11 @@ export default function BestParkSlide() {
         BEST
       </h2>
       <Slider {...settings}>
-        <div>
-          <h3>{parksData[0].pname}</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
+        {parksData.map(item => (
+          <div>
+            <h3>{item.pname}</h3>
+          </div>
+        ))}
       </Slider>
     </SlideContainer>
   );
