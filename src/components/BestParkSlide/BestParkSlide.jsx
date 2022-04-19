@@ -14,8 +14,16 @@ export default function BestParkSlide() {
 
   useEffect(() => {
     const getData = async () => {
+      // fetch(`http://localhost:3001/parksBest`)
+      //   .then(res => {
+      //     return res.json();
+      //   })
+      //   .then(data => {
+      //     setData(data);
+      //   });
+
       try {
-        const response = await fetch(`http://localhost:3001/parks`);
+        const response = await fetch(`http://localhost:3001/parksBest`);
         if (!response.ok) {
           throw new Error(
             `This is an HTTP error: The status is ${response.status}`,
@@ -53,13 +61,31 @@ export default function BestParkSlide() {
         </i>
         BEST
       </h2>
-      <Slider {...settings}>
-        {parksData.map(item => (
+      {loading && <div>잠시만 기다려 주세요...</div>}
+      {error && (
+        <div>{`공원 데이터를 가져오는데 문제가 있습니다. - ${error}`}</div>
+      )}
+      {parksData && (
+        <Slider {...settings}>
+          {parksData.map(item => (
+            <div key={item.pidx}>
+              <h3>{item.pname}</h3>
+            </div>
+          ))}
           <div>
-            <h3>{item.pname}</h3>
+            <h3>{parksData[0].pname}</h3>
           </div>
-        ))}
-      </Slider>
+          <div>
+            <h3>1</h3>
+          </div>
+          <div>
+            <h3>1</h3>
+          </div>
+          <div>
+            <h3>1</h3>
+          </div>
+        </Slider>
+      )}
     </SlideContainer>
   );
 }
