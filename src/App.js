@@ -9,6 +9,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import './styles/antdCustomStyle.css';
 import AuthProviders from './contexts/AuthProviders';
 import './styles/globalStyle.css';
+import BestParkSlide from './components/BestParkSlide/BestParkSlide';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/mypage" element={<MyPage />} />
             <Route path="/detail/:id" element={<DetailPage />} />
             <Route path="/signup" element={<SignupPage />} />
+            <Route path="/slide" element={<BestParkSlide />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </HashRouter>

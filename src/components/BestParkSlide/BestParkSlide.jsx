@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -8,6 +8,33 @@ import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { style } from '../../styles/BestParkSlide.styles';
 
 export default function BestParkSlide() {
+  const [parksData, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await fetch(`http://localhost:3001/parks`);
+        if (!response.ok) {
+          throw new Error(
+            `This is an HTTP error: The status is ${response.status}`,
+          );
+        }
+        const data = await response.json();
+        setData(data);
+        // console.log(data);
+        setError(null);
+      } catch (err) {
+        setError(err.message);
+        setData(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData();
+  }, []);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -26,7 +53,7 @@ export default function BestParkSlide() {
       </h2>
       <Slider {...settings}>
         <div>
-          <h3>1</h3>
+          <h3>{parksData[0].pname}</h3>
         </div>
         <div>
           <h3>2</h3>
