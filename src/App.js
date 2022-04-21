@@ -9,7 +9,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import './styles/antdCustomStyle.css';
 import AuthProviders from './contexts/AuthProviders';
 import './styles/globalStyle.css';
-import BestParkSlide from './components/BestParkSlide/BestParkSlide';
+import BestParkSlide from './components/ParkList/BestParkSlide';
 
 function App() {
   return (
