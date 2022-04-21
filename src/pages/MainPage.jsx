@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Input, Tag, Menu, Dropdown } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
-import BestParkSlide from '../components/BestParkSlide/BestParkSlide';
+import BestParkSlide from '../components/ParkList/BestParkSlide';
 import ParkList from '../components/ParkList/ParkList';
 // import SearchForm from '../components/Search/SearchForm';
 // import SearchInput from '../components/Search/SearchInput';

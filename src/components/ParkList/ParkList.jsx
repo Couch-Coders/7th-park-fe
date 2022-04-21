@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { List, Card, Rate } from 'antd';
-import { Link } from 'react-router-dom';
+import { List } from 'antd';
 import { style } from '../../styles/ParkList.styles';
 import useDebounce from '../../hooks/useDebounce';
+import useFetch from '../../hooks/useFetch';
+import Cards from './Cards';
 
 export default function ParkList(props) {
+  // Data 로딩
+  const [parksData, error, fetchLoading] = useFetch(
+    `http://localhost:3001/parks`, // 임시
+  );
+  const [loading, setLoading] = useState(false);
+  // 검색
   console.log(props, 'props');
   const { search } = props;
   console.log(search, 'search');
-  const { Meta } = Card;
   const [isSearch, setIsSearch] = useState();
-  const [parksData, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   // 검색
   const [searchData, setSearchData] = useState([]);
@@ -38,40 +41,12 @@ export default function ParkList(props) {
     if (debouncedSearch) fetchData();
   }, [debouncedSearch]);
 
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await fetch(`http://localhost:3001/parks`);
-        if (!response.ok) {
-          throw new Error(
-            `This is an HTTP error: The status is ${response.status}`,
-          );
-        }
-        const data = await response.json();
-        setData(data);
-        // console.log(data);
-        setError(null);
-      } catch (err) {
-        setError(err.message);
-        setData(null);
-      } finally {
-        setLoading(false);
-      }
-    };
-    getData();
-  }, []);
-
-  // useEffect(() => {
-  //   console.log(search);
-  // }, []);
-
-  // console.log(parksData);
   console.log(searchData);
 
   return (
     <div>
       <CardListContainer>
-        {loading && <div>잠시만 기다려 주세요...</div>}
+        {fetchLoading && <div>잠시만 기다려 주세요...</div>}
         {error && (
           <div>{`공원 데이터를 가져오는데 문제가 있습니다. - ${error}`}</div>
         )}
@@ -88,26 +63,7 @@ export default function ParkList(props) {
               xxl: 3,
             }}
             dataSource={isSearch ? searchData : parksData}
-            renderItem={item => (
-              <Link key={item.pidx} to={`/detail/${item.pidx}`}>
-                <List.Item>
-                  <Card
-                    hoverable
-                    style={{ width: 278, height: 173, padding: 0 }}
-                    cover={
-                      <img
-                        alt={item.pname}
-                        src={item.pimg}
-                        style={{ height: 131 }}
-                      />
-                    }
-                  >
-                    <Meta title={item.pname} />
-                    <Rate allowHalf defaultValue={item.pavgRate} />
-                  </Card>
-                </List.Item>
-              </Link>
-            )}
+            renderItem={item => <Cards item={item} />}
           />
         )}
       </CardListContainer>
