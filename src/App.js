@@ -13,8 +13,8 @@ import './styles/globalStyle.css';
 function App() {
   return (
     <div className="App">
-      <AuthProviders>
-        <HashRouter>
+      <HashRouter>
+        <AuthProviders>
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/mypage" element={<MyPage />} />
@@ -22,8 +22,8 @@ function App() {
             <Route path="/signup" element={<SignupPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
-        </HashRouter>
-      </AuthProviders>
+        </AuthProviders>
+      </HashRouter>
     </div>
   );
 }
