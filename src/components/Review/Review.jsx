@@ -2,8 +2,16 @@ import React from 'react';
 import { Pagination, Rate, Input } from 'antd';
 import { style } from '../../styles/Review.styles';
 import ReviewItem from './ReviewItem';
+import useFetch from '../../hooks/useFetch';
 
 export default function Review() {
+  const [reviewData, error, loading] = useFetch(
+    `http://localhost:3001/review`, // 임시
+  );
+
+  console.log('확인1');
+  console.log(reviewData);
+  console.log('확인2');
   const { Search } = Input;
 
   const onSearch = value => console.log(value);

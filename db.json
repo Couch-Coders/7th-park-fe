@@ -1573,96 +1573,28 @@
       "px": 127.12
     }
   ],
-  "Review": [
+  "review": [
     {
       "rIdx": 1,
+      "pIdx": 1,
       "uIdx": 1,
       "uNickname": "user1",
       "gImg": "htttestp:www.balladang.com",
-      "rLikeAvg": 2.5,
+      "rRate": 2.5,
+      "rLikeCnt": 10,
       "rDesc": "너무좋아용",
-      "rDate": "2022-02-21T01:03:01.945825"
+      "rDate": "2022-02-21"
     },
     {
       "rIdx": 2,
-      "uIdx": 2,
+      "pIdx": 1,
+      "uIdx": 1,
       "uNickname": "user2",
       "gImg": "htttestp:www.balladang.com",
-      "rLikeAvg": 4.5,
-      "rDesc": "너무좋아용",
-      "rDate": "2022-02-21T01:03:01.945825"
-    },
-    {
-      "rIdx": 3,
-      "uIdx": 3,
-      "uNickname": "user3",
-      "gImg": "htttestp:www.balladang.com",
-      "rLikeAvg": 1.5,
-      "rDesc": "너무좋아용",
-      "rDate": "2022-02-21T01:03:01.945825"
-    },
-    {
-      "rIdx": 4,
-      "uIdx": 4,
-      "uNickname": "user4",
-      "gImg": "htttestp:www.balladang.com",
-      "rLikeAvg": 4.2,
-      "rDesc": "너무좋아용",
-      "rDate": "2022-02-21T01:03:01.945825"
-    },
-    {
-      "rIdx": 5,
-      "uIdx": 5,
-      "uNickname": "user5",
-      "gImg": "htttestp:www.balladang.com",
-      "rLikeAvg": 4,
-      "rDesc": "너무좋아용",
-      "rDate": "2022-02-21T01:03:01.945825"
-    },
-    {
-      "rIdx": 6,
-      "uIdx": 6,
-      "uNickname": "user6",
-      "gImg": "htttestp:www.balladang.com",
-      "rLikeAvg": 3,
-      "rDesc": "너무좋아용",
-      "rDate": "2022-02-21T01:03:01.945825"
-    },
-    {
-      "rIdx": 7,
-      "uIdx": 7,
-      "uNickname": "user7",
-      "gImg": "htttestp:www.balladang.com",
-      "rLikeAvg": 2.1,
-      "rDesc": "너무좋아용",
-      "rDate": "2022-02-21T01:03:01.945825"
-    },
-    {
-      "rIdx": 8,
-      "uIdx": 8,
-      "uNickname": "user8",
-      "gImg": "htttestp:www.balladang.com",
-      "rLikeAvg": 4.1,
-      "rDesc": "너무좋아용",
-      "rDate": "2022-02-21T01:03:01.945825"
-    },
-    {
-      "rIdx": 9,
-      "uIdx": 9,
-      "uNickname": "user9",
-      "gImg": "htttestp:www.balladang.com",
-      "rLikeAvg": 1.5,
-      "rDesc": "너무좋아용",
-      "rDate": "2022-02-21T01:03:01.945825"
-    },
-    {
-      "rIdx": 10,
-      "uIdx": 10,
-      "uNickname": "user10",
-      "gImg": "htttestp:www.balladang.com",
-      "rLikeAvg": 3.8,
-      "rDesc": "너무좋아용",
-      "rDate": "2022-02-21T01:03:01.945825"
+      "rRate": 4.5,
+      "rLikeCnt": 16,
+      "rDesc": "식당도 만족스럽고 공원도 깔끔해서 힐링하다가 가요 ㅎㅎ",
+      "rDate": "2021-09-12"
     }
   ],
   "detail": [
