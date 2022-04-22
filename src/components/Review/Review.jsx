@@ -5,7 +5,7 @@ import ReviewItem from './ReviewItem';
 import useFetch from '../../hooks/useFetch';
 
 export default function Review() {
-  const [reviewData, error, loading] = useFetch(
+  const reviewData = useFetch(
     `http://localhost:3001/review`, // 임시
   );
 
@@ -36,11 +36,6 @@ export default function Review() {
           </div>
         </ReviewInputBox>
         <ReviewList>
-          <ReviewItem />
-          <ReviewItem />
-          <ReviewItem />
-          <ReviewItem />
-          <ReviewItem />
           <ReviewItem />
           <Pagination defaultCurrent={1} total={50} />
         </ReviewList>
