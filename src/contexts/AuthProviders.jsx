@@ -61,7 +61,7 @@ export default function AuthProviders({ children }) {
     () => ({
       currentUser,
     }),
-    [currentUser],
+    [],
   );
   // const isCurrentUser = useMemo(() => ({ currentUser }), []);
   return (
