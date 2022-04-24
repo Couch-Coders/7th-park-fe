@@ -55,7 +55,7 @@ export default function AuthProviders({ children }) {
       }
     });
     // console.log(currentUser);
-  }, [currentUser]);
+  }, []);
 
   const contextValue = useMemo(
     () => ({
