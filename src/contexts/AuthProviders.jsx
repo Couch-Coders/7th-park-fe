@@ -25,20 +25,31 @@ export default function AuthProviders({ children }) {
         // defaultHeaders.ID = user.email;
         // defaultHeaders.NickName = user.displayName;
         // 로그인 시도 (백엔드 API 구현 필요)
-        // const res = await fetch('/users/me', {
-        //   method: 'GET',
-        //   headers: defaultHeaders,
-        // });
-        // // console.log(res, ' res');
-        // // console.log(user, 'user');
-        // // const loginUser = await res.json();
-        // // 로그인 성공시 user를 넘겨줌
-        // if (res.status === 200) {
-        //   const loginUser = await res.json();
-        //   setCurrentUser(loginUser);
+        const res = await fetch('/users/me', {
+          method: 'GET',
+          headers: defaultHeaders,
+        });
 
-        //   console.log(loginUser, '로그인유저');
-        // }
+        // console.log(res, ' res');
+        // console.log(user, 'user');
+        // const loginUser = await res.json();
+        // 로그인 성공시 user를 넘겨줌
+        if (res.status === 200) {
+          const loginUser = await res.json();
+          setCurrentUser(loginUser);
+
+          console.log(loginUser, '로그인유저');
+        } else if (res.status === 404) {
+          // navigate('/signup');
+          // console.log(typeof user.displayName);
+          await fetch('/users', {
+            method: 'POST',
+            headers: defaultHeaders,
+            body: JSON.stringify({
+              uNickname: user.displayName,
+            }),
+          });
+        }
       } else {
         setCurrentUser(null);
       }
