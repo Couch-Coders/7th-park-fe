@@ -7,16 +7,7 @@ import useFetch from '../../hooks/useFetch';
 export default function Review() {
   const [reviewData, error, loading] = useFetch(
     `http://localhost:3001/review`, // 임시
-    // );
   );
-
-  const loadOn = () => {
-    if (!loading) {
-      return reviewData[0].content;
-    }
-    return console.log('대기');
-  };
-  loadOn();
 
   const { Search } = Input;
 
@@ -47,7 +38,12 @@ export default function Review() {
             </div>
           </ReviewInputBox>
           <ReviewList>
-            <ReviewItem review={loadOn()} />
+            {reviewData[0].content.map(review => {
+              return <ReviewItem review={review} />;
+            })}
+            {/* <ReviewItem />; */}
+            {/* <ReviewItem review={reviewData[0].content} />; */}
+            {/* <ReviewItem review={review} />; */}
             <Pagination defaultCurrent={1} total={50} />
           </ReviewList>
         </ReviewListContainer>

@@ -8,9 +8,9 @@ export default function useFetch(url) {
   useEffect(() => {
     const getData = async () => {
       try {
-        console.log('response');
+        // console.log('response');
         const response = await fetch(url);
-        console.log(response);
+        // console.log(response);
         if (!response.ok) {
           throw new Error(
             `This is an HTTP error: The status is ${response.status}`,
