@@ -14,8 +14,8 @@ import BestParkSlide from './components/ParkList/BestParkSlide';
 function App() {
   return (
     <div className="App">
-      <AuthProviders>
-        <HashRouter>
+      <HashRouter>
+        <AuthProviders>
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/mypage" element={<MyPage />} />
@@ -24,8 +24,8 @@ function App() {
             <Route path="/slide" element={<BestParkSlide />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
-        </HashRouter>
-      </AuthProviders>
+        </AuthProviders>
+      </HashRouter>
     </div>
   );
 }
