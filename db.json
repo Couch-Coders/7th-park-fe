@@ -1587,14 +1587,44 @@
     },
     {
       "rIdx": 2,
-      "pIdx": 1,
+      "--pIdx": 1,
       "uIdx": 1,
       "uNickname": "user2",
       "gImg": "htttestp:www.balladang.com",
-      "rRate": 4.5,
+      "--rRate": 4.5,
       "rLikeCnt": 16,
       "rDesc": "식당도 만족스럽고 공원도 깔끔해서 힐링하다가 가요 ㅎㅎ",
       "rDate": "2021-09-12"
+    },
+    {
+      "content": [
+        {
+          "uidx": 1,
+          "gimg": "data:image/jpeg;base64,/",
+          "unickname": "hii",
+          "rdesc": "좋아요",
+          "ridx": 2,
+          "rlikeCnt": 0,
+          "rdate": "2022-04-25T16:32:26.712+00:00"
+        }
+      ],
+      "pageable": {
+        "sort": { "sorted": false, "unsorted": true, "empty": true },
+        "pageNumber": 0,
+        "pageSize": 20,
+        "offset": 0,
+        "paged": true,
+        "unpaged": false
+      },
+      "last": true,
+      "totalElements": 1,
+      "totalPages": 1,
+      "sort": { "sorted": false, "unsorted": true, "empty": true },
+      "first": true,
+      "number": 0,
+      "numberOfElements": 1,
+      "size": 20,
+      "empty": false
     }
   ],
   "detail": [
