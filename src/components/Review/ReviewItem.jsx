@@ -5,7 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { style } from '../../styles/ReviewItem.styles';
 
-export default function ReviewItem() {
+export default function ReviewItem({ review }) {
+  console.log(`넘어온 리뷰`);
+  console.log(review);
   return (
     <ReviewItemContainer>
       <ReviewItemCard>

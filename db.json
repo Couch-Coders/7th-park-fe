@@ -1573,60 +1573,6 @@
       "px": 127.12
     }
   ],
-  "review": [
-    {
-      "rIdx": 1,
-      "pIdx": 1,
-      "uIdx": 1,
-      "uNickname": "user1",
-      "gImg": "htttestp:www.balladang.com",
-      "rRate": 2.5,
-      "rLikeCnt": 10,
-      "rDesc": "너무좋아용",
-      "rDate": "2022-02-21"
-    },
-    {
-      "rIdx": 2,
-      "--pIdx": 1,
-      "uIdx": 1,
-      "uNickname": "user2",
-      "gImg": "htttestp:www.balladang.com",
-      "--rRate": 4.5,
-      "rLikeCnt": 16,
-      "rDesc": "식당도 만족스럽고 공원도 깔끔해서 힐링하다가 가요 ㅎㅎ",
-      "rDate": "2021-09-12"
-    },
-    {
-      "content": [
-        {
-          "uidx": 1,
-          "gimg": "data:image/jpeg;base64,/",
-          "unickname": "hii",
-          "rdesc": "좋아요",
-          "ridx": 2,
-          "rlikeCnt": 0,
-          "rdate": "2022-04-25T16:32:26.712+00:00"
-        }
-      ],
-      "pageable": {
-        "sort": { "sorted": false, "unsorted": true, "empty": true },
-        "pageNumber": 0,
-        "pageSize": 20,
-        "offset": 0,
-        "paged": true,
-        "unpaged": false
-      },
-      "last": true,
-      "totalElements": 1,
-      "totalPages": 1,
-      "sort": { "sorted": false, "unsorted": true, "empty": true },
-      "first": true,
-      "number": 0,
-      "numberOfElements": 1,
-      "size": 20,
-      "empty": false
-    }
-  ],
   "detail": [
     {
       "p_addr": "서울특별시 중구 삼일대로 231(예장동)",
@@ -4626,6 +4572,59 @@
       "pname": "감로천생태공원(관악산)",
       "parea": "금천구",
       "py": 37.47
+    }
+  ],
+  "review": [
+    {
+      "content": [
+        {
+          "uidx": 1,
+          "gimg": "data:image/jpeg;base64,/",
+          "unickname": "hii",
+          "rdesc": "좋아요",
+          "rrate": 1,
+          "ridx": 2,
+          "rlikeCnt": 0,
+          "rdate": "2022-04-25T16:32:26.712+00:00"
+        },
+        {
+          "uidx": 1,
+          "gimg": "htttestp:www.balladang.com",
+          "unickname": "user1",
+          "rdesc": "너무좋아용",
+          "rrate": 2.5,
+          "ridx": 1,
+          "rlikeCnt": 10,
+          "rdate": "2022-02-21"
+        },
+        {
+          "uIdx": 1,
+          "gImg": "htttestp:www.balladang.com",
+          "unickname": "user2",
+          "rdesc": "식당도 만족스럽고 공원도 깔끔해서 힐링하다가 가요 ㅎㅎ",
+          "rrate": 4.5,
+          "ridx": 2,
+          "rlikeCnt": 16,
+          "rdate": "2021-09-12"
+        }
+      ],
+      "pageable": {
+        "sort": { "sorted": false, "unsorted": true, "empty": true },
+        "pageNumber": 0,
+        "pageSize": 20,
+        "offset": 0,
+        "paged": true,
+        "unpaged": false
+      },
+      "last": true,
+      "totalElements": 1,
+      "totalPages": 1,
+      "sort": { "sorted": false, "unsorted": true, "empty": true },
+      "first": true,
+      "number": 0,
+      "numberOfElements": 1,
+      "size": 20,
+      "empty": false
     }
   ]
 }
