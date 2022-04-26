@@ -41,9 +41,6 @@ export default function Review() {
             {reviewData[0].content.map(review => {
               return <ReviewItem review={review} />;
             })}
-            {/* <ReviewItem />; */}
-            {/* <ReviewItem review={reviewData[0].content} />; */}
-            {/* <ReviewItem review={review} />; */}
             <Pagination defaultCurrent={1} total={50} />
           </ReviewList>
         </ReviewListContainer>
