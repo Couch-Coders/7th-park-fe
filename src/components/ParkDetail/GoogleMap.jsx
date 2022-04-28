@@ -1,7 +1,7 @@
 import React from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
-export default function Googlemap({ lat: latitude, lng: longitude }) {
+export default function Googlemap({ lat: px, lng: py }) {
   const googleMapConfig = {
     apikey: process.env.REACT_APP_GOOGLEMAP_API_KEY,
   };
@@ -12,8 +12,8 @@ export default function Googlemap({ lat: latitude, lng: longitude }) {
   };
 
   const center = {
-    lat: Number(latitude),
-    lng: Number(longitude),
+    lat: Number(px),
+    lng: Number(py),
   };
 
   return (
