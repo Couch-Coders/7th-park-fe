@@ -8,7 +8,7 @@ import Cards from './Cards';
 export default function ParkList(props) {
   // Data 로딩
   const [parksData, error, fetchLoading] = useFetch(
-    `http://localhost:3001/parks`, // 임시
+    `https://parkproj.herokuapp.com/parks`, //
   );
   const [loading, setLoading] = useState(false);
   // 검색
@@ -29,7 +29,7 @@ export default function ParkList(props) {
       // setNotices([]);
       setSearchData([]);
       const data = await fetch(
-        `http://localhost:3001/parks?pname=${debouncedSearch}`,
+        `https://parkproj.herokuapp.com/?pname=${debouncedSearch}`,
         // `https://ws-public.interpol.int/notices/v1/red?forename=${debouncedSearch}&resultPerPage=200`,
       ).then(res => res.json());
       // setNotices(data._embedded.notices);
