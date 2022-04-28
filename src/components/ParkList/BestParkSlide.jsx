@@ -11,7 +11,7 @@ import Cards from './Cards';
 
 export default function BestParkSlide() {
   const [parksData, error, loading] = useFetch(
-    `https://parkproj.herokuapp.com/bestParkSlide`, // 임시
+    `https://parkproj.herokuapp.com/parks`, // 임시
   );
 
   const settings = {
