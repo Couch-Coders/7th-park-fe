@@ -1,5 +1,5 @@
 {
-  "name": "7th-park-fe",
+  "name": "park-fe",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,19 +8,19 @@
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
-    "@react-google-maps/api": "^2.8.1",
-    "@testing-library/jest-dom": "^5.16.3",
-    "@testing-library/react": "^12.1.4",
+    "@react-google-maps/api": "^2.10.1",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
-    "antd": "^4.19.3",
-    "eslint-config-airbnb": "^19.0.4",
-    "firebase": "^9.6.10",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "antd": "^4.19.5",
+    "firebase": "^9.6.11",
+    "json-server": "^0.17.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-infinite-scroll-component": "^6.1.0",
-    "react-router-dom": "^6.2.2",
-    "react-scripts": "^5.0.0",
-    "react-slick": "^0.28.1",
+    "react-router-dom": "6",
+    "react-scripts": "5.0.1",
+    "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
@@ -49,10 +49,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "eslint": "^8.12.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.6.2"
-  }
+  "proxy": "https://parkproj.herokuapp.com/"
 }
