@@ -4609,5 +4609,61 @@
       "id": 5,
       "data": "알림 테스트"
     }
+  ],
+  "bestParkSlide": [
+    {
+      "pidx": 7,
+      "pimg": "http://parks.seoul.go.kr/file/info/view.do?fIdx=1891",
+      "pavgRate": 0.0,
+      "px": 126.92,
+      "pname": "진관근린공원(구파발폭포)",
+      "parea": "은평구",
+      "py": 37.64
+    },
+    {
+      "pidx": 8,
+      "pimg": "http://parks.seoul.go.kr/file/info/view.do?fIdx=1893",
+      "pavgRate": 0.0,
+      "px": 126.91,
+      "pname": "중마루근린공원",
+      "parea": "영등포구",
+      "py": 37.52
+    },
+    {
+      "pidx": 9,
+      "pimg": "http://parks.seoul.go.kr/file/info/view.do?fIdx=1894",
+      "pavgRate": 0.0,
+      "px": 127.02,
+      "pname": "응봉공원",
+      "parea": "성동구",
+      "py": 37.56
+    },
+    {
+      "pidx": 10,
+      "pimg": "http://parks.seoul.go.kr/file/info/view.do?fIdx=1895",
+      "pavgRate": 0.0,
+      "px": 126.86,
+      "pname": "매화근린공원",
+      "parea": "강서구",
+      "py": 37.56
+    },
+    {
+      "pidx": 11,
+      "pimg": "http://parks.seoul.go.kr/file/info/view.do?fIdx=1896",
+      "pavgRate": 0.0,
+      "px": 127.05,
+      "pname": "성수근린공원",
+      "parea": "성동구",
+      "py": 37.54
+    },
+    {
+      "pidx": 26,
+      "pimg": "http://parks.seoul.go.kr/file/info/view.do?fIdx=1913",
+      "pavgRate": 0.0,
+      "px": 126.91,
+      "pname": "감로천생태공원(관악산)",
+      "parea": "금천구",
+      "py": 37.47
+    }
   ]
 }
