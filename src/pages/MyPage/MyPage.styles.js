@@ -14,6 +14,9 @@ const MyPageContent = styled.div`
   .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
     color: #259e50;
   }
+  .ant-tabs-content-holder {
+    margin-bottom: 30px;
+  }
 `;
 
 export const style = { MyPageContainer, MyPageContent };
