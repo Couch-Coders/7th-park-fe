@@ -1,6 +1,6 @@
 <div align="center">
 
-![Logo](https://parkproj.herokuapp.com/static/media/logo.48bc57895aacd20b6053.png)
+![Logo]<img src="https://parkproj.herokuapp.com/static/media/logo.48bc57895aacd20b6053.png"  width="150" height="150"/>
 
 # 공원, 어디로갈까?
 
