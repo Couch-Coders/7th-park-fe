@@ -16,7 +16,7 @@
 
 ## 배포링크
 
-Access my site at [google.com](https://google.com)
+Access my site at [공원, 어디로 갈까?](https://parkproj.herokuapp.com/)
 
 ## 프로젝트 소개
 
