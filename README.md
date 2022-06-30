@@ -1,6 +1,6 @@
 <div align="center">
 
-![Logo](https://via.placeholder.com/150x150)
+![Logo]([https://via.placeholder.com/150x150)](https://parkproj.herokuapp.com/static/media/logo.48bc57895aacd20b6053.png)
 
 # 공원, 어디로갈까?
 
